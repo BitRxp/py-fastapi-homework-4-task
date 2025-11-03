@@ -238,7 +238,7 @@ async def activate_account(
     await db.delete(token_record)
     await db.commit()
 
-    login_link = f"{settings.FRONTEND_URL.rstrip('/')}accounts/activate"
+    login_link = f"{settings.FRONTEND_URL.rstrip('/')}/login"
     background_tasks.add_task(
         email_sender.send_activation_complete_email, str(user.email), login_link
     )
@@ -414,9 +414,7 @@ async def reset_password(
             detail="An error occurred while resetting the password.",
         )
 
-    reset_complete_link = (
-        f"{settings.FRONTEND_URL.rstrip('/')}accounts/reset-password/complete"
-    )
+    reset_complete_link = f"{settings.FRONTEND_URL.rstrip('/')}/login"
     background_tasks.add_task(
         email_sender.send_password_reset_complete_email,
         str(user.email),
