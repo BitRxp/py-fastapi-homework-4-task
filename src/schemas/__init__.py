@@ -3,7 +3,7 @@ from schemas.movies import (
     MovieListResponseSchema,
     MovieListItemSchema,
     MovieCreateSchema,
-    MovieUpdateSchema
+    MovieUpdateSchema,
 )
 from schemas.accounts import (
     UserRegistrationRequestSchema,
@@ -15,5 +15,8 @@ from schemas.accounts import (
     UserLoginResponseSchema,
     UserLoginRequestSchema,
     TokenRefreshRequestSchema,
-    TokenRefreshResponseSchema
+    TokenRefreshResponseSchema,
 )
+
+
+from schemas.profiles import ProfileCreateSchema, ProfileResponseSchema
